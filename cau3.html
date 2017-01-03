@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cau 3</title>
+        <script language="javascript" type="text/javascript">
+			document.forms['adduser'].name.focus();
+			function set_focus()
+			{
+			   document.forms['adduser'].name.focus();
+			}
+			function check_submit_addnew()
+			{
+			   var frm = window.document.adduser; 		
+			   if(frm.user.value=='')
+			   {
+				  alert('Ban chua nhap Username !');			
+				  document.forms['adduser'].user.focus();
+				  return false;
+			   }
+			   else if(frm.pass.value=='')
+			   {
+				  alert('Ban chua nhap mat khau!');
+				  document.forms['adduser'].pass.focus();			
+				  return false;
+			   }
+			    else if(frm.email.value=='')
+			   {
+				  alert('Ban chua nhap mat khau!');
+				  document.forms['adduser'].email.focus();			
+				  return false;
+			   }
+			   else						
+				  alert('Kiem tra thanh cong!!!');	
+			}
+</script>
+        
+    </head>
+    <body>
+        <form name="adduser" action="themthanhvien.php" method="post" onsubmit="return check_submit_addnew()">
+    <fieldset>
+        <label>User Name:</label> <input type="text" name="user" size="25" /><br />
+        <label>Password:</label> <input type="password" name="pass" size="25" /><br />
+        <label>Email :</label> <input type="email" name="email" size="25" /><br />
+        <label></label> <input type="submit" name="ok" value="KiemTra" />
+      </fieldset>
+</form>
+    </body>
+</html>
